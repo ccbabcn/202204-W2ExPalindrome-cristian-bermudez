@@ -1,7 +1,5 @@
 const isPalindrome = require("./isPalindrome");
 
-// Given / when / then
-
 describe("Given the funnction isPalindrome", () => {
   describe("When it recieves the text 'Ana'", () => {
     test("Then it should return true", () => {
@@ -22,6 +20,32 @@ describe("Given the funnction isPalindrome", () => {
       const checkTest = isPalindrome(introducedString);
 
       expect(checkTest).toBe(expctedResult);
+    });
+  });
+
+  describe("When it recieves an empty text", () => {
+    test("Then it should throw the error 'Text not provided'", () => {
+      const noText = "";
+      const expctedResult = "Text not provided";
+
+      const result = () => {
+        isPalindrome(noText);
+      };
+
+      expect(result).toThrow(expctedResult);
+    });
+  });
+
+  describe("When it recieves an undefined text", () => {
+    test("Then it should throw the error 'Text not provided'", () => {
+      const undefinedText = undefined;
+      const expctedResult = "Text not provided";
+
+      const result = () => {
+        isPalindrome(undefinedText);
+      };
+
+      expect(result).toThrow(expctedResult);
     });
   });
 });

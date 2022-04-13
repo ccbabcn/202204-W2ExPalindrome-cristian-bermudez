@@ -1,12 +1,16 @@
 const isPalindrome = (text) => {
-  const normalizedText = text
-    .toLowerCase()
-    .replace(/[.,:;()_?¿!¡-\s]/g, "")
-    .normalize("NFD")
-    .replace(/\p{Diacritic}/gu, "");
-  const reversedNormalizedText = normalizedText.split("").reverse().join("");
+  if (text === "" || typeof text === "undefined") {
+    throw Error("Text not provided");
+  } else {
+    const normalizedText = text
+      .toLowerCase()
+      .replace(/[.,:;()_?¿!¡-\s]/g, "")
+      .normalize("NFD")
+      .replace(/\p{Diacritic}/gu, "");
+    const reversedNormalizedText = normalizedText.split("").reverse().join("");
 
-  return normalizedText === reversedNormalizedText;
+    return normalizedText === reversedNormalizedText;
+  }
 };
 
 module.exports = isPalindrome;
