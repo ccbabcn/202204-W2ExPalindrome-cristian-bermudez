@@ -1,4 +1,7 @@
 const isPalindrome = (text) => {
+  if (text === "" || typeof text === undefined) {
+    throw Error("Text not provided");
+  }
   const normalizedText = text
     .toLowerCase()
     .replace(/[.,:;()_?¿!¡-\s]/g, "")
