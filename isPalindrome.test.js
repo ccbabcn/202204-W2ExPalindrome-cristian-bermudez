@@ -35,4 +35,17 @@ describe("Given the funnction isPalindrome", () => {
       expect(result).toThrow(expctedResult);
     });
   });
+
+  describe("When it recieves an undefined text", () => {
+    test("Then it should throw the error 'Text not provided'", () => {
+      const undefinedText = undefined;
+      const expctedResult = "Text not provided";
+
+      const result = () => {
+        isPalindrome(undefinedText);
+      };
+
+      expect(result).toThrow(expctedResult);
+    });
+  });
 });
